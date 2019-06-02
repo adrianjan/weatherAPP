@@ -56,12 +56,13 @@ $xlg: 12em;
 
 .container {
   width: 80vw;
+  max-height: 600px;
+  overflow-y: scroll;
   max-width: 1000px;
   margin: 0 auto;
   background: $brown;
   position: relative;
   color: $white;
-  overflow: hidden;
 }
 
 .container-header {
@@ -136,36 +137,15 @@ $xlg: 12em;
   margin-top: 10px;
   margin-bottom: -10px;
 }
-
-.more {
-  padding: 50px 0;
-  width: 100%;
-  justify-content: center;
-}
-
-.fa-tint,
-.fa-wind {
-  font-size: $big;
-  color: $flax;
-}
-
-.humidity,
-.wind {
-  width: 50%;
-  text-align: center;
-}
-
-p.info {
-  text-transform: capitalize;
-  font-size: $xsm;
-}
-
-.back {
-  margin-right: 100px;
-  font-size: $big;
-}
 // END Weather - NOW
 // 5 days forecast
+
+.forecast {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  display: none;
+}
 
 .item {
   width: 100%;
@@ -176,7 +156,8 @@ p.info {
   grid-template-rows: 1fr 2fr;
   margin-bottom: 20px;
 }
-.item:last-of-type{
+
+.item:last-of-type {
   margin-bottom: -10px;
 }
 
@@ -194,12 +175,12 @@ p.info {
 }
 
 .day {
-  background: url(../icons/day.svg) no-repeat;
+  background: url("../icons/day.svg") no-repeat;
   background-size: cover;
 }
 
 .night {
-    background: url(../icons/night.svg) no-repeat;
-    background-size: cover;
+  background: url("../icons/night.svg") no-repeat;
+  background-size: cover;
 }
 // END 5 days forecast
