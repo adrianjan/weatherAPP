@@ -47,6 +47,7 @@ body {
 .container {
   width: 80vw;
   max-height: 600px;
+  overflow-x: hidden;
   overflow-y: scroll;
   max-width: 1000px;
   margin: 0 auto;
@@ -152,6 +153,9 @@ body {
 .details {
   padding: 30px 0; }
 
+.weather {
+  font-size: 1.7em; }
+
 .icon {
   text-align: center; }
 
@@ -208,3 +212,10 @@ body {
 .night {
   background: url("../icons/night.svg") no-repeat;
   background-size: cover; }
+
+.phase {
+  font-size: 1.7em;
+  color: #EDD892; }
+
+.phase.first {
+  color: #628395; }

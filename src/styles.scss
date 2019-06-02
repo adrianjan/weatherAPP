@@ -57,6 +57,7 @@ $xlg: 12em;
 .container {
   width: 80vw;
   max-height: 600px;
+  overflow-x: hidden;
   overflow-y: scroll;
   max-width: 1000px;
   margin: 0 auto;
@@ -127,6 +128,10 @@ $xlg: 12em;
   padding: 30px 0;
 }
 
+.weather{
+  font-size: $sm;
+}
+
 .icon {
   text-align: center;
 }
@@ -182,5 +187,12 @@ $xlg: 12em;
 .night {
   background: url("../icons/night.svg") no-repeat;
   background-size: cover;
+}
+.phase{
+  font-size: $sm;
+  color: $flax;
+}
+.phase.first{
+  color: $steel;
 }
 // END 5 days forecast
