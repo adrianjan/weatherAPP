@@ -1,6 +1,6 @@
 import "@babel/polyfill";
 
-const key = 'ndKZ5fzpUFg4VLFsL6BEALORGCUKaAdq';
+const key = 'RmWksIe2SLaLGx0a5dsWdAwqXbndt97m';
 const form = document.querySelector('form');
 const now = document.querySelector('.now');
 const wText = document.querySelector('.weather');
@@ -39,8 +39,8 @@ const displayArr = async (arr) => {
       <!-- One day info  -->
       <div class="item">
         <div class="info text-center">
-          <div class="date">${date}</div>
           <div class="days-name">${dayName}</div>
+          <div class="date">${date}</div>
         </div>
         <div class="day text-center">
           <div class="icon"><img src="icons/${item.Day.Icon}.svg" alt=""></div>

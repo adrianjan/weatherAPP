@@ -11,51 +11,51 @@
 </head>
 
 <body>
-  <div class="wrapper flex flex-column">
-    <header>
-      <h1 class="header h1">Check weather here :]</h1>
-    </header>
-    <main>
-      <div class="container">
-        <header class="container-header">
-          <div class="time"></div>
-          <div class="logo flex flex-row">
-            <h3 class="h3">Your weather-APP</h3>
-            <i class="fas fa-temperature-low"></i>
+  <main>
+    <div class="wrapper">
+      <header class="header">
+        <h1 class="h1">Check weather conditions</h1>
+        <div class="time">19:17</div>
+      </header>
+      <section class="search">
+        <input type="text" placeholder="Location" class="input">
+      </section>
+      <!-- Current conditions -->
+      <section class="current">
+        <h2 class="h2">Current <small>conditions</small></h2>
+        <div class="details">
+          <p class="weather">Sunny</p>
+          <div class="icon"><img src="https://img.icons8.com/wired/64/000000/partly-cloudy-day.png"></div>
+          <div class="temp">16C</div>
+        </div>
+      </section>
+      <!-- END Current conditions -->
+      <!-- 5 days forecast conditions -->
+      <section class="forecast">
+        <h2 class="h2">Forecast for 5 days</h2>
+        <!-- One Day info -->
+        <div class="item">
+          <div class="info">
+            <div class="day-name">Monday</div>
+            <div class="date">01.07.2019</div>
           </div>
-        </header>
-        <!-- Search form -->
-        <section class="start flex flex-column">
-          <header>
-            <h2>Wanna check out weather conditions?</h2>
-          </header>
-          <div>
-            <form>
-              <input name="city" class="input input-text" type="text" placeholder="Location">
-            </form>
+          <div class="day">
+            <div class="icon"><img src="icons/1.svg" alt=""></div>
           </div>
-        </section>
-        <!-- END Search form -->
-        <!-- Current conditions -->
-        <section class="now">
-          <h3 class="h3 ml-20">Current <small>weather conditions</small></h3>
-          <div class="details flex flex-column">
-            <p class="weather"><span></span></p>
-            <div class="icon"><img src="https://img.icons8.com/wired/64/000000/partly-cloudy-day.png"></div>
-            <div class="temp"></div>
+          <p class="phase first">Lorem ipsum dolor.</p>
+          <div class="night">
+            <div class="icon"><img src="icons/3.svg" alt=""></div>
           </div>
-        </section>
-        <!-- END Current conditions -->
-        <!-- 5 days Forecast -->
-        <section class="forecast">
-          <h3 class="h3 ml-20">5 days <small>Forecast</small></h3>
-          <div class="wrap">
-          </div>
-        </section>
-        <!-- END 5 days Forecast -->
-      </div>
-    </main>
-  </div>
+          <p class="phase">Lorem ipsum dolor.</p>
+        </div>
+        <!-- END Day info -->
+      </section>
+      <!-- END 5 days forecast conditions -->
+    </div>
+  </main>
+  <footer class="footer">
+    <p>&copy; All rights reserved <span class="name">AJ</span></p>
+  </footer>
   <script src="assets/converted.js"></script>
 </body>
 
