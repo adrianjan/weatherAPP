@@ -1,15 +1,18 @@
 import "@babel/polyfill";
 import './styles.scss';
 
-const key = '1dBqWNGAnEykjXx5piFwV8CCmyR3NJ4K';
+const key = 'v7yfvnNLq6vW75O8fYXUg38xE2hYFvWG';
 const form = document.querySelector('form');
 const now = document.querySelector('.current');
+const current = document.querySelector('#current');
 const wText = document.querySelector('.weather');
 const icon = document.querySelector('.icon');
 const temp = document.querySelector('.temp');
 const details = document.querySelector('.details');
 const wrap = document.querySelector('.day-wrapper');
 const time = document.querySelector('.time');
+
+const distanceToTop = current.getBoundingClientRect().top;
 
 const timer = () => {
   const now = new Date();
@@ -112,6 +115,22 @@ const getCityInfo = async (city) => {
     });
 };
 
+const hideKeyboard = () => {
+  document.activeElement.blur();
+  const inputs = document.querySelectorAll('input');
+  for (let i = 0; i < inputs.length; i++) {
+    inputs[i].blur();
+  }
+};
+
+const scrollDown = () =>{
+  window.scrollTo({
+    top: distanceToTop,
+    left: 0,
+    behavior: 'smooth'
+  });
+}
+
 form.addEventListener('submit', (e) => {
   // do not refresh
   e.preventDefault();
@@ -119,6 +138,10 @@ form.addEventListener('submit', (e) => {
   const city = form.city.value.trim();
   // get city info
   getCityInfo(city);
+  scrollDown();
+  hideKeyboard();
 });
 
 setInterval(timer, 1000);
+
+console.log('Working');
