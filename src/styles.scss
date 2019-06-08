@@ -23,7 +23,7 @@ $lg: 6rem;
 $xlg: 12rem;
 
 .wrapper {
-  background: url("../img/bg.jpg") no-repeat center;
+  background: url("/dist/../img/bg.jpg") no-repeat center;
   background-size: cover;
   font-family: $asap;
   width: 100%;
@@ -99,6 +99,25 @@ $xlg: 12rem;
 .forecast {
   padding: 0 20px;
   font-size: $xsm;
+  overflow-x: hidden;
+}
+
+.main-wrapper {
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.day-wrapper {
+  width: 500%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  opacity: 0;
+  transition: opacity .5s ease-in;
+}
+
+.visible{
+  opacity: 1;
 }
 
 .item {
@@ -108,7 +127,6 @@ $xlg: 12rem;
   background: rgba(98,131,149, .6);
   padding: 20px 20px 1px;
   border-top-left-radius: 30px;
-  margin: 25px auto;
 }
 
 .day-name {
@@ -131,12 +149,12 @@ $xlg: 12rem;
 }
 
 .day {
-  background: url("../icons/day.svg") no-repeat center;
+  background: url("/dist/../icons/day.svg") no-repeat center;
   background-size: cover;
 }
 
 .night {
-  background: url("../icons/night.svg") no-repeat center;
+  background: url("/dist/../icons/night.svg") no-repeat center;
   background-size: cover;
 }
 
@@ -186,19 +204,4 @@ $xlg: 12rem;
 .name {
   font-family: $merri;
   font-weight: bold;
-}
-
-// SCROLLBAR Styles
-
-::-webkit-scrollbar {
-    width: .5em;
-    background: $flax;
-}
-
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-}
-
-::-webkit-scrollbar-thumb {
-  background: $steel;
 }

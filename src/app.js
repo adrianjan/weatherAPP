@@ -1,13 +1,14 @@
 import "@babel/polyfill";
+import './styles.scss';
 
-const key = 'RmWksIe2SLaLGx0a5dsWdAwqXbndt97m';
+const key = '1dBqWNGAnEykjXx5piFwV8CCmyR3NJ4K';
 const form = document.querySelector('form');
-const now = document.querySelector('.now');
+const now = document.querySelector('.current');
 const wText = document.querySelector('.weather');
 const icon = document.querySelector('.icon');
 const temp = document.querySelector('.temp');
-const forecast = document.querySelector('.forecast');
-const wrap = document.querySelector('.wrap');
+const details = document.querySelector('.details');
+const wrap = document.querySelector('.day-wrapper');
 const time = document.querySelector('.time');
 
 const timer = () => {
@@ -38,24 +39,25 @@ const displayArr = async (arr) => {
     html += `
       <!-- One day info  -->
       <div class="item">
-        <div class="info text-center">
-          <div class="days-name">${dayName}</div>
+        <div class="info">
+          <div class="day-name">${dayName}</div>
           <div class="date">${date}</div>
         </div>
         <div class="day text-center">
           <div class="icon"><img src="icons/${item.Day.Icon}.svg" alt=""></div>
-          <p class="phase first">${item.Day.IconPhrase}</p>
         </div>
-        <div class="night text-center">
+        <p class="phase first">${item.Day.IconPhrase}</p>
+        <div class="night">
           <div class="icon"><img src="icons/${item.Night.Icon}.svg" alt=""></div>
-          <p class="phase">${item.Night.IconPhrase}</p>
         </div>
+        <p class="phase">${item.Night.IconPhrase}</p>
       </div>
       <!-- End One day info  -->
       `;
     console.log(item);
   });
   wrap.innerHTML = html;
+  wrap.classList.add('visible');
 };
 
 const displayUI = (obj) => {
@@ -117,7 +119,6 @@ form.addEventListener('submit', (e) => {
   const city = form.city.value.trim();
   // get city info
   getCityInfo(city);
-  forecast.style.display = 'block';
 });
 
 setInterval(timer, 1000);

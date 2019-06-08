@@ -18,7 +18,9 @@
         <div class="time">19:17</div>
       </header>
       <section class="search">
-        <input type="text" placeholder="Location" class="input">
+        <form>
+          <input type="text" placeholder="Location" class="input" name="city">
+        </form>
       </section>
       <!-- Current conditions -->
       <section class="current">
@@ -33,22 +35,11 @@
       <!-- 5 days forecast conditions -->
       <section class="forecast">
         <h2 class="h2">Forecast for 5 days</h2>
-        <!-- One Day info -->
-        <div class="item">
-          <div class="info">
-            <div class="day-name">Monday</div>
-            <div class="date">01.07.2019</div>
+        <div class="main-wrapper">
+          <div class="day-wrapper">
+
           </div>
-          <div class="day">
-            <div class="icon"><img src="icons/1.svg" alt=""></div>
-          </div>
-          <p class="phase first">Lorem ipsum dolor.</p>
-          <div class="night">
-            <div class="icon"><img src="icons/3.svg" alt=""></div>
-          </div>
-          <p class="phase">Lorem ipsum dolor.</p>
         </div>
-        <!-- END Day info -->
       </section>
       <!-- END 5 days forecast conditions -->
     </div>
