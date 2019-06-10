@@ -14,37 +14,53 @@
   <main>
     <div class="wrapper">
       <header class="header">
-        <h1 class="h1">Check weather conditions</h1>
-        <div class="time">19:17</div>
+        <h1>Check weather conditions</h1>
+        <div class="header__time">19:17</div>
       </header>
       <section class="search">
         <form>
-          <input type="text" placeholder="Location" class="input" name="city">
+          <input type="text" placeholder="Location" class="search__input" name="city">
         </form>
       </section>
       <!-- Current conditions -->
       <section class="current" id="current">
-        <h2 class="h2">Current <small>conditions</small></h2>
+        <h2 class="current__h2">Current <small>conditions</small></h2>
         <div class="details">
-          <p class="weather">Sunny</p>
-          <div class="icon"><img src="https://img.icons8.com/wired/64/000000/partly-cloudy-day.png"></div>
-          <div class="temp">16C</div>
+          <p class="details__weather">Sunny</p>
+          <div class="details__icon"><img src="https://img.icons8.com/wired/64/000000/partly-cloudy-day.png"></div>
+          <div class="details__temp">16C</div>
         </div>
       </section>
       <!-- END Current conditions -->
       <!-- 5 days forecast conditions -->
       <section class="forecast">
-        <h2 class="h2">Forecast for 5 days</h2>
-        <div class="main-wrapper">
-          <div class="day-wrapper">
+        <h2 class="forecast__h2">Forecast for 5 days</h2>
+        <!-- Days WRAPPER  -->
+        <div class="day-wrapper">
+          <!-- One day info  -->
+          <div class="item">
+            <div class="item__info">
+              <div class="info__day-name">Monday}</div>
+              <div class="info__date">${date}</div>
+            </div>
+            <div class="item__day">
+              <figure><img src="icons/24.svg" alt=""></figure>
+            </div>
+            <p class="item__phase">${item.Day.IconPhrase}</p>
+            <div class="item__night">
+              <figure><img src="icons/20.svg" alt=""></figure>
+            </div>
+            <p class="item__phase">${item.Night.IconPhrase}</p>
           </div>
+          <!-- End One day info  -->
         </div>
+        <!-- End Days WRAPPER  -->
       </section>
       <!-- END 5 days forecast conditions -->
     </div>
   </main>
   <footer class="footer">
-    <p>&copy; All rights reserved <span class="name">AJ</span></p>
+    <p>&copy; All rights reserved <span class="footer__name">AJ</span></p>
   </footer>
   <script src="assets/converted.js"></script>
 </body>

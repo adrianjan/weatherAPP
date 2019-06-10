@@ -23,7 +23,7 @@
   background: #FCB97D;
   position: relative; }
 
-.time {
+.header__time {
   position: absolute;
   top: 15px;
   right: 20px;
@@ -39,11 +39,12 @@
   padding: 30px;
   border-bottom: 3px solid #FCB97D; }
 
-.h2 {
+.current__h2, .forecast__h2 {
   text-transform: uppercase;
   position: relative; }
 
-.h2::after {
+.current__h2::after,
+.forecast__h2::after {
   content: '';
   position: absolute;
   width: 20%;
@@ -60,11 +61,11 @@
   text-align: center;
   padding: 30px 0; }
 
-.weather {
+.details__weather {
   font-size: 2.5rem;
   text-transform: capitalize; }
 
-.temp {
+.details__temp {
   font-size: 2.5rem;
   font-family: "Merriweather Sans", sans-serif;
   margin-top: 20px;
@@ -75,17 +76,13 @@
   font-size: 1.3rem;
   overflow-x: hidden; }
 
-.main-wrapper {
-  overflow-x: scroll;
-  -webkit-overflow-scrolling: touch; }
-
 .day-wrapper {
   width: 500%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
-  opacity: 0;
-  transition: opacity .5s ease-in; }
+  transition: opacity .5s ease-in;
+  transition-delay: .3s; }
 
 .visible {
   opacity: 1; }
@@ -98,34 +95,34 @@
   padding: 20px 20px 1px;
   border-top-left-radius: 30px; }
 
-.day-name {
+.info__day-name {
   font-size: 1.7rem;
   color: #EDD892;
   margin-bottom: 10px;
   text-align: right; }
 
-.date {
+.info__date {
   text-align: right;
   font-family: "Merriweather Sans", sans-serif;
   color: #F7FFF7; }
 
-.day,
-.night {
+.item__day,
+.item__night {
   text-align: center;
   margin: 10px 0; }
 
-.day {
+.item__day {
   background: url("/dist/../icons/day.svg") no-repeat center;
   background-size: cover; }
 
-.night {
+.item__night {
   background: url("/dist/../icons/night.svg") no-repeat center;
   background-size: cover; }
 
-.phase {
+.item__phase {
   text-transform: uppercase; }
 
-.input {
+.search__input {
   width: 80%;
   padding: 10px 0;
   font-size: 1.7rem;
@@ -140,42 +137,42 @@
   text-transform: uppercase;
   transition: border 0.5s ease-in; }
 
-.input::-webkit-input-placeholder {
+.search__input::-webkit-input-placeholder {
   color: #F7FFF7;
   transition: transform 0.3s; }
 
-.input::-moz-placeholder {
+.search__input::-moz-placeholder {
   color: #F7FFF7;
   transition: transform 0.3s; }
 
-.input:-ms-input-placeholder {
+.search__input:-ms-input-placeholder {
   color: #F7FFF7;
   transition: transform 0.3s; }
 
-.input::-ms-input-placeholder {
+.search__input::-ms-input-placeholder {
   color: #F7FFF7;
   transition: transform 0.3s; }
 
-.input::placeholder {
+.search__input::placeholder {
   color: #F7FFF7;
   transition: transform 0.3s; }
 
-.input:focus {
+.search__input:focus {
   border-bottom-color: #EDD892; }
 
-.input:focus::-webkit-input-placeholder {
+.search__input:focus::-webkit-input-placeholder {
   transform: translateY(100%) scale(0); }
 
-.input:focus::-moz-placeholder {
+.search__input:focus::-moz-placeholder {
   transform: translateY(100%) scale(0); }
 
-.input:focus:-ms-input-placeholder {
+.search__input:focus:-ms-input-placeholder {
   transform: translateY(100%) scale(0); }
 
-.input:focus::-ms-input-placeholder {
+.search__input:focus::-ms-input-placeholder {
   transform: translateY(100%) scale(0); }
 
-.input:focus::placeholder {
+.search__input:focus::placeholder {
   transform: translateY(100%) scale(0); }
 
 .footer {
@@ -185,7 +182,7 @@
   font-family: "Asap", sans-serif;
   font-size: 1.3rem; }
 
-.name {
+.footer__name {
   font-family: "Merriweather Sans", sans-serif;
   font-weight: bold; }
 

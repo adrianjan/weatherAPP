@@ -41,7 +41,7 @@ $xlg: 12rem;
   position: relative;
 }
 
-.time {
+.header__time {
   position: absolute;
   top: 15px;
   right: 20px;
@@ -60,12 +60,13 @@ $xlg: 12rem;
   border-bottom: 3px solid $mellow;
 }
 
-.h2 {
+.current__h2, .forecast__h2 {
   text-transform: uppercase;
   position: relative;
 }
 
-.h2::after {
+.current__h2::after,
+.forecast__h2::after {
   content: '';
   position: absolute;
   width: 20%;
@@ -84,12 +85,12 @@ $xlg: 12rem;
   padding: 30px 0;
 }
 
-.weather {
+.details__weather {
   font-size: $big;
   text-transform: capitalize;
 }
 
-.temp {
+.details__temp {
   font-size: $big;
   font-family: $merri;
   margin-top: 20px;
@@ -102,18 +103,13 @@ $xlg: 12rem;
   overflow-x: hidden;
 }
 
-.main-wrapper {
-  overflow-x: scroll;
-  -webkit-overflow-scrolling: touch;
-}
-
 .day-wrapper {
   width: 500%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
-  opacity: 0;
   transition: opacity .5s ease-in;
+  transition-delay: .3s;
 }
 
 .visible{
@@ -129,41 +125,41 @@ $xlg: 12rem;
   border-top-left-radius: 30px;
 }
 
-.day-name {
+.info__day-name {
   font-size: $sm;
   color: $flax;
   margin-bottom: 10px;
   text-align: right;
 }
 
-.date {
+.info__date {
   text-align: right;
   font-family: $merri;
   color: $white;
 }
 
-.day,
-.night {
+.item__day,
+.item__night {
   text-align: center;
   margin: 10px 0;
 }
 
-.day {
+.item__day {
   background: url("/dist/../icons/day.svg") no-repeat center;
   background-size: cover;
 }
 
-.night {
+.item__night {
   background: url("/dist/../icons/night.svg") no-repeat center;
   background-size: cover;
 }
 
-.phase {
+.item__phase {
   text-transform: uppercase;
 }
 // Type LOCATION
 
-.input {
+.search__input {
   width: 80%;
   padding: 10px 0;
   font-size: $sm;
@@ -179,16 +175,16 @@ $xlg: 12rem;
   transition: border 0.5s ease-in;
 }
 
-.input::placeholder {
+.search__input::placeholder {
   color: $white;
   transition: transform 0.3s;
 }
 
-.input:focus {
+.search__input:focus {
   border-bottom-color: $flax;
 }
 
-.input:focus::placeholder {
+.search__input:focus::placeholder {
   transform: translateY(100%) scale(0);
 }
 // END Type LOCATION
@@ -201,7 +197,7 @@ $xlg: 12rem;
   font-size: $xsm;
 }
 
-.name {
+.footer__name {
   font-family: $merri;
   font-weight: bold;
 }

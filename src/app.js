@@ -5,13 +5,12 @@ const key = 'v7yfvnNLq6vW75O8fYXUg38xE2hYFvWG';
 const form = document.querySelector('form');
 const now = document.querySelector('.current');
 const current = document.querySelector('#current');
-const wText = document.querySelector('.weather');
-const icon = document.querySelector('.icon');
-const temp = document.querySelector('.temp');
+const wText = document.querySelector('.details__weather');
+const icon = document.querySelector('.details__icon');
+const temp = document.querySelector('.details__temp');
 const details = document.querySelector('.details');
 const wrap = document.querySelector('.day-wrapper');
-const time = document.querySelector('.time');
-
+const time = document.querySelector('.header__time');
 const distanceToTop = current.getBoundingClientRect().top;
 
 const timer = () => {
@@ -42,18 +41,18 @@ const displayArr = async (arr) => {
     html += `
       <!-- One day info  -->
       <div class="item">
-        <div class="info">
-          <div class="day-name">${dayName}</div>
-          <div class="date">${date}</div>
+        <div class="item__info">
+          <div class="info__day-name">${dayName}</div>
+          <div class="info__date">${date}</div>
         </div>
-        <div class="day text-center">
-          <div class="icon"><img src="icons/${item.Day.Icon}.svg" alt=""></div>
+        <div class="item__day">
+          <figure><img src="icons/${item.Day.Icon}.svg" alt=""></figure>
         </div>
-        <p class="phase first">${item.Day.IconPhrase}</p>
-        <div class="night">
-          <div class="icon"><img src="icons/${item.Night.Icon}.svg" alt=""></div>
+        <p class="item__phase">${item.Day.IconPhrase}</p>
+        <div class="item__night">
+          <figure><img src="icons/${item.Night.Icon}.svg" alt=""></figure>
         </div>
-        <p class="phase">${item.Night.IconPhrase}</p>
+        <p class="item__phase">${item.Night.IconPhrase}</p>
       </div>
       <!-- End One day info  -->
       `;
@@ -143,5 +142,3 @@ form.addEventListener('submit', (e) => {
 });
 
 setInterval(timer, 1000);
-
-console.log('Working');
