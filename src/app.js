@@ -21,7 +21,7 @@ const timer = () => {
     m = '0' + m;
   }
   time.textContent = `${h}:${m}`;
-}
+};
 
 const displayArr = async (arr) => {
   let html = '';
@@ -66,7 +66,7 @@ const displayUI = (obj) => {
   icon.innerHTML = `<img src="icons/${obj.WeatherIcon}.svg" alt="${obj.WeatherText}">`;
   temp.textContent = `${obj.Temperature.Metric.Value}℃`;
   wText.textContent = `${obj.WeatherText}`;
-}
+};
 
 const getForecast = async (code) => {
   const base = 'http://dataservice.accuweather.com/forecasts/v1/daily/5day/';
@@ -76,7 +76,7 @@ const getForecast = async (code) => {
   const data = await response.json();
 
   return data.DailyForecasts;
-}
+};
 
 //use location code to fetch conditions
 const getWeather = async (code) => {
@@ -122,13 +122,31 @@ const hideKeyboard = () => {
   }
 };
 
-const scrollDown = () =>{
+const scrollDown = () => {
   window.scrollTo({
     top: distanceToTop,
     left: 0,
     behavior: 'smooth'
   });
-}
+};
+
+const swipeLeft = (change) => {
+  if (i >= 0) {
+    // dayWrapper.style.transform = `translateX(0%)`;
+    console.log('Cannot swipe left');
+  } else {
+    dayWrapper.style.transform = `translateX(${i+=20}%)`;
+  }
+};
+
+const swipeRight = (change) => {
+  if (i <= -80) {
+    dayWrapper.style.transform = `translateX(-80%)`;
+    console.log('Cannot swipe right');
+  } else {
+    dayWrapper.style.transform = `translateX(${i-=20}%)`;
+  }
+};
 
 form.addEventListener('submit', (e) => {
   // do not refresh
@@ -142,3 +160,58 @@ form.addEventListener('submit', (e) => {
 });
 
 setInterval(timer, 1000);
+
+// swipe
+
+const forecast = document.querySelector('.forecast');
+const dayWrapper = document.querySelector('.day-wrapper');
+let startX;
+let x = 0;
+let i = 0;
+let translateX = 0;
+let moveX = 0;
+
+const touchStart = (e) => {
+  e.preventDefault();
+  startX = e.touches[0].clientX;
+};
+
+const touchMove = (e) => {
+  e.preventDefault();
+  moveX = e.touches[0].clientX;
+  let change = startX - moveX;
+  let xPer = (Math.round((change / screen.width) * 100) / 5);
+  // set translateX to X from touchEnd
+  // show transforming from X to x
+  // console.log(x);
+  // if(x >= -80 && x <= 80){
+  //   dayWrapper.style.transform = `translateX(${-xPer + x}%)`;
+  // }
+};
+
+const touchEnd = (e) => {
+  let change = Math.round((e.changedTouches[0].clientX - startX));
+  let xPer = Math.round(((change / screen.width) * 100) / 5);
+  let direction = startX - moveX;
+  x += xPer;
+  if (direction < 0) {
+    //i+=20
+    swipeLeft(change);
+    console.log('Swiped left');
+  } else{
+    //i-=20
+    swipeRight(change);
+    console.log('Swiped right');
+  }
+  translateX = dayWrapper.style.cssText;
+  if (translateX.length == 28) {
+    i = parseInt(translateX.substring(22, 25), 10);
+  } else if (translateX.length == 26) {
+    i = parseInt(translateX.substring(22, 23), 10);
+  }
+  console.log('Index: ', i);
+};
+
+forecast.addEventListener('touchstart', touchStart);
+forecast.addEventListener('touchmove', touchMove);
+forecast.addEventListener('touchend', touchEnd);

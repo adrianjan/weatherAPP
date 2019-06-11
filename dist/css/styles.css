@@ -81,8 +81,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
-  transition: opacity .5s ease-in;
-  transition-delay: .3s; }
+  transition: opacity .5s ease-in .3s, transform .1s ease-out; }
 
 .visible {
   opacity: 1; }
