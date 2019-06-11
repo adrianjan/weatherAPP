@@ -74,7 +74,7 @@ $xlg: 12rem;
   height: 2px;
   background: $white;
   position: absolute;
-  left: 150px;
+  left: 20px;
   bottom: -5px;
 }
 
@@ -82,18 +82,24 @@ $xlg: 12rem;
   width: 80%;
   margin: auto;
   text-align: center;
-  padding: 30px 0;
+  padding: 10px 0;
 }
 
 .details__weather {
   font-size: $big;
   text-transform: capitalize;
+  margin-top: -10px;
+}
+
+.icon__img{
+  margin-top: -30px;
+  width: 40%;
+  max-width: 200px;
 }
 
 .details__temp {
   font-size: $big;
   font-family: $merri;
-  margin-top: 20px;
   color: $white;
 }
 
@@ -103,13 +109,18 @@ $xlg: 12rem;
   overflow-x: hidden;
 }
 
+@-moz-document url-prefix() {
+    .forecast {
+        padding: 50px 20px;
+    }
+}
+
 .day-wrapper {
   width: 500%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   transition: opacity .5s ease-in .3s, transform .1s ease-out;
-  // transform: translateX(-20%);
 }
 
 .visible{

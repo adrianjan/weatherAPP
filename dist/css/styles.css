@@ -52,29 +52,38 @@
   height: 2px;
   background: #F7FFF7;
   position: absolute;
-  left: 150px;
+  left: 20px;
   bottom: -5px; }
 
 .details {
   width: 80%;
   margin: auto;
   text-align: center;
-  padding: 30px 0; }
+  padding: 10px 0; }
 
 .details__weather {
   font-size: 2.5rem;
-  text-transform: capitalize; }
+  text-transform: capitalize;
+  margin-top: -10px; }
+
+.icon__img {
+  margin-top: -30px;
+  width: 40%;
+  max-width: 200px; }
 
 .details__temp {
   font-size: 2.5rem;
   font-family: "Merriweather Sans", sans-serif;
-  margin-top: 20px;
   color: #F7FFF7; }
 
 .forecast {
   padding: 0 20px;
   font-size: 1.3rem;
   overflow-x: hidden; }
+
+@-moz-document url-prefix() {
+  .forecast {
+    padding: 50px 20px; } }
 
 .day-wrapper {
   width: 500%;

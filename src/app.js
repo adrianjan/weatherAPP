@@ -63,7 +63,7 @@ const displayArr = async (arr) => {
 };
 
 const displayUI = (obj) => {
-  icon.innerHTML = `<img src="icons/${obj.WeatherIcon}.svg" alt="${obj.WeatherText}">`;
+  icon.innerHTML = `<img src="icons/${obj.WeatherIcon}.svg" class="icon__img" alt="${obj.WeatherText}">`;
   temp.textContent = `${obj.Temperature.Metric.Value}℃`;
   wText.textContent = `${obj.WeatherText}`;
 };
