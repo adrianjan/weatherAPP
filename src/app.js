@@ -12,6 +12,8 @@ const details = document.querySelector('.details');
 const wrap = document.querySelector('.day-wrapper');
 const time = document.querySelector('.header__time');
 const distanceToTop = current.getBoundingClientRect().top;
+const left = document.querySelector('.cannotLeft');
+const right = document.querySelector('.cannotRight');
 
 const timer = () => {
   const now = new Date();
@@ -134,8 +136,11 @@ const swipeLeft = (change) => {
   if (i >= 0) {
     // dayWrapper.style.transform = `translateX(0%)`;
     console.log('Cannot swipe left');
+    left.classList.add('showLeft');
   } else {
     dayWrapper.style.transform = `translateX(${i+=20}%)`;
+    left.classList.remove('showLeft');
+    right.classList.remove('showRight');
   }
 };
 
@@ -143,8 +148,11 @@ const swipeRight = (change) => {
   if (i <= -80) {
     dayWrapper.style.transform = `translateX(-80%)`;
     console.log('Cannot swipe right');
+    right.classList.add('showRight');
   } else {
     dayWrapper.style.transform = `translateX(${i-=20}%)`;
+    right.classList.remove('showRight');
+    left.classList.remove('showLeft');
   }
 };
 
@@ -181,12 +189,6 @@ const touchMove = (e) => {
   moveX = e.touches[0].clientX;
   let change = startX - moveX;
   let xPer = (Math.round((change / screen.width) * 100) / 5);
-  // set translateX to X from touchEnd
-  // show transforming from X to x
-  // console.log(x);
-  // if(x >= -80 && x <= 80){
-  //   dayWrapper.style.transform = `translateX(${-xPer + x}%)`;
-  // }
 };
 
 const touchEnd = (e) => {

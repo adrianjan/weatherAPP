@@ -81,7 +81,38 @@
 .forecast {
   padding: 0 20px;
   font-size: 1.3rem;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  position: relative; }
+
+.cannotLeft,
+.cannotRight {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.3);
+  transform: translateY(-50%) rotateZ(-90deg);
+  top: 50%;
+  width: 120px;
+  text-align: center;
+  padding: 5px 0;
+  color: #F7FFF7;
+  transition: transform 0.1s ease-out; }
+
+.cannotLeft {
+  left: -40px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transform: translateX(-100%); }
+
+.showLeft {
+  transform: translateY(-50%) rotateZ(-90deg) translateX(0); }
+
+.cannotRight {
+  right: -40px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  transform: translateX(100%); }
+
+.showRight {
+  transform: translateY(-50%) rotateZ(-90deg) translateX(0); }
 
 @-moz-document url-prefix() {
   .forecast {
