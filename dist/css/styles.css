@@ -18,7 +18,8 @@
 
 .header {
   width: 100%;
-  padding: 20px 0;
+  display: grid;
+  align-items: center;
   text-align: center;
   background: #FCB97D;
   position: relative; }
@@ -39,7 +40,8 @@
   padding: 30px;
   border-bottom: 3px solid #FCB97D; }
 
-.current__h2, .forecast__h2 {
+.current__h2,
+.forecast__h2 {
   text-transform: uppercase;
   position: relative; }
 
@@ -90,7 +92,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
-  transition: opacity .5s ease-in .3s, transform .1s ease-out; }
+  transition: opacity 0.5s ease-in 0.3s, transform 0.1s ease-out; }
 
 .visible {
   opacity: 1; }
@@ -193,6 +195,70 @@
 .footer__name {
   font-family: "Merriweather Sans", sans-serif;
   font-weight: bold; }
+
+@media (min-width: 679px) {
+  .wrapper {
+    grid-auto-rows: 140px 180px 350px 450px; }
+  .header__time {
+    font-size: 1.7rem; }
+  .search__input {
+    width: 40%;
+    max-width: 600px; } }
+
+@media (min-width: 800px) and (max-width: 1399px) {
+  .wrapper {
+    grid-auto-rows: 140px 180px 350px 1250px; }
+  .forecast {
+    overflow: hidden; }
+  .day-wrapper {
+    width: 100%;
+    grid-row-gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr; }
+  .item:nth-of-type(5) {
+    grid-column: 1 / 3; } }
+
+@media (min-width: 1400px) {
+  .wrapper {
+    grid-auto-rows: 140px auto 350px 550px;
+    background: none; }
+  .search {
+    background: url("/dist/../img/search.jpg") no-repeat center;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+    padding: 120px 0; }
+    .search::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1; }
+  .header__h1 {
+    font-size: 2.5rem; }
+  .current {
+    background: #F7FFF7; }
+  .current__h2,
+  .forecast__h2 {
+    font-size: 2.5rem; }
+  .details__weather {
+    margin-top: -45px;
+    font-size: 3.4rem; }
+  .details__temp {
+    color: #628395; }
+  .forecast {
+    font-size: 1.7rem;
+    background: url("/dist/../img/bg.jpg") no-repeat center;
+    background-size: cover; }
+  .day-wrapper {
+    width: 100%;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr; }
+  .info__day-name {
+    font-size: 2.5rem; } }
 
 
 /*# sourceMappingURL=styles.css.map*/

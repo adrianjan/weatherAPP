@@ -198,7 +198,7 @@ const touchEnd = (e) => {
     //i+=20
     swipeLeft(change);
     console.log('Swiped left');
-  } else{
+  } else {
     //i-=20
     swipeRight(change);
     console.log('Swiped right');
