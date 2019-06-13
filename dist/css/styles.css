@@ -35,8 +35,8 @@
 .header__h1 {
   -ms-grid-row-align: center;
       align-self: center;
-  -ms-grid-column-align: end;
-      justify-self: end; }
+  -ms-grid-column-align: center;
+      justify-self: center; }
 
 .header__time {
   position: absolute;
