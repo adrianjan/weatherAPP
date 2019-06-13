@@ -37,7 +37,8 @@ $xlg: 12rem;
 .header {
   width: 100%;
   display: grid;
-  text-align: center;
+  justify-items: center;
+  align-items: center;
   background: $mellow;
   position: relative;
   grid-area: head;
@@ -45,6 +46,7 @@ $xlg: 12rem;
 
 .header__h1 {
   align-self: center;
+  justify-self: end;
 }
 
 .header__time {
@@ -416,8 +418,4 @@ $xlg: 12rem;
   .info__day-name {
     font-size: $big;
   }
-}
-
-.autoprefixer-test {
-  user-select: none;
 }

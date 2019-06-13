@@ -26,14 +26,17 @@
   width: 100%;
   display: -ms-grid;
   display: grid;
-  text-align: center;
+  justify-items: center;
+  align-items: center;
   background: #FCB97D;
   position: relative;
   grid-area: head; }
 
 .header__h1 {
   -ms-grid-row-align: center;
-      align-self: center; }
+      align-self: center;
+  -ms-grid-column-align: end;
+      justify-self: end; }
 
 .header__time {
   position: absolute;
@@ -373,12 +376,6 @@
     grid-template-rows: 1fr; }
   .info__day-name {
     font-size: 2.5rem; } }
-
-.autoprefixer-test {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none; }
 
 
 /*# sourceMappingURL=styles.css.map*/
