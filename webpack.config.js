@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const autoprefixer = require("autoprefixer");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
@@ -25,10 +26,10 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use:
-        [
+        use: [
           MiniCssExtractPlugin.loader,
-          'css-loader'
+          'css-loader',
+          'postcss-loader'
         ]
       },
       {
@@ -36,14 +37,23 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
-          "postcss-loader",
+          'postcss-loader',
           'sass-loader'
-      ]
+        ]
       }
     ]
   },
   devtool: 'source-map',
   plugins: [
-    new MiniCssExtractPlugin({ filename: "../css/styles.css" })
+    new MiniCssExtractPlugin({
+        filename: "../css/styles.css"
+      },
+      new webpack.LoaderOptionsPlugin({
+        options: {
+          postcss: [
+            autoprefixer()
+          ]
+        }
+      }))
   ]
 };

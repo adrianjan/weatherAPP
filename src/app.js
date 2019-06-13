@@ -214,6 +214,8 @@ const touchEnd = (e) => {
   console.log('Index: ', i);
 };
 
-forecast.addEventListener('touchstart', touchStart);
-forecast.addEventListener('touchmove', touchMove);
-forecast.addEventListener('touchend', touchEnd);
+if (screen.width <= 800) {
+  forecast.addEventListener('touchstart', touchStart);
+  forecast.addEventListener('touchmove', touchMove);
+  forecast.addEventListener('touchend', touchEnd);
+}
