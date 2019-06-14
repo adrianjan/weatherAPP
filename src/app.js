@@ -1,7 +1,7 @@
 import "@babel/polyfill";
 import './styles.scss';
 
-const key = 'v7yfvnNLq6vW75O8fYXUg38xE2hYFvWG';
+const key = 'jim0YYKnAB9e1mumuHbONARbU73qNpiB';
 const form = document.querySelector('form');
 const now = document.querySelector('.current');
 const current = document.querySelector('#current');
