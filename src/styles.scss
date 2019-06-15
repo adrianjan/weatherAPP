@@ -23,7 +23,7 @@ $lg: 3.4rem;
 $xlg: 12rem;
 
 .wrapper {
-  background: url("/dist/../img/bg.jpg") no-repeat center;
+  background: url("../img/bg.jpg") no-repeat center;
   background-size: cover;
   font-family: $asap;
   width: 100%;
@@ -238,12 +238,12 @@ $xlg: 12rem;
 }
 
 .item__day {
-  background: url("/dist/../icons/day.svg") no-repeat center;
+  background: url("../icons/day.svg") no-repeat center;
   background-size: cover;
 }
 
 .item__night {
-  background: url("/dist/../icons/night.svg") no-repeat center;
+  background: url("../icons/night.svg") no-repeat center;
   background-size: cover;
 }
 
@@ -339,7 +339,7 @@ $xlg: 12rem;
   }
 
   .search {
-    background: url("/dist/../img/search.jpg") no-repeat center;
+    background: url("../img/search.jpg") no-repeat center;
     background-size: cover;
     position: relative;
     z-index: 0;
@@ -405,7 +405,7 @@ $xlg: 12rem;
 
   .forecast {
     font-size: $sm;
-    background: url("/dist/../img/bg.jpg") no-repeat center;
+    background: url("../img/bg.jpg") no-repeat center;
     background-size: cover;
   }
 

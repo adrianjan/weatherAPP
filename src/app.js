@@ -58,7 +58,6 @@ const displayArr = async (arr) => {
       </div>
       <!-- End One day info  -->
       `;
-    console.log(item);
   });
   wrap.innerHTML = html;
   wrap.classList.add('visible');
@@ -135,7 +134,6 @@ const scrollDown = () => {
 const swipeLeft = (change) => {
   if (i >= 0) {
     // dayWrapper.style.transform = `translateX(0%)`;
-    console.log('Cannot swipe left');
     left.classList.add('showLeft');
   } else {
     dayWrapper.style.transform = `translateX(${i+=20}%)`;
@@ -147,7 +145,6 @@ const swipeLeft = (change) => {
 const swipeRight = (change) => {
   if (i <= -80) {
     dayWrapper.style.transform = `translateX(-80%)`;
-    console.log('Cannot swipe right');
     right.classList.add('showRight');
   } else {
     dayWrapper.style.transform = `translateX(${i-=20}%)`;
@@ -199,11 +196,9 @@ const touchEnd = (e) => {
   if (direction < 0) {
     //i+=20
     swipeLeft(change);
-    console.log('Swiped left');
   } else {
     //i-=20
     swipeRight(change);
-    console.log('Swiped right');
   }
   translateX = dayWrapper.style.cssText;
   if (translateX.length == 28) {
@@ -211,7 +206,6 @@ const touchEnd = (e) => {
   } else if (translateX.length == 26) {
     i = parseInt(translateX.substring(22, 23), 10);
   }
-  console.log('Index: ', i);
 };
 
 if (screen.width <= 800) {

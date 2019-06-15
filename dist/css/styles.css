@@ -7,7 +7,7 @@
   box-sizing: border-box; }
 
 .wrapper {
-  background: url("/dist/../img/bg.jpg") no-repeat center;
+  background: url("../img/bg.jpg") no-repeat center;
   background-size: cover;
   font-family: "Asap", sans-serif;
   width: 100%;
@@ -213,11 +213,11 @@
   margin: 10px 0; }
 
 .item__day {
-  background: url("/dist/../icons/day.svg") no-repeat center;
+  background: url("../icons/day.svg") no-repeat center;
   background-size: cover; }
 
 .item__night {
-  background: url("/dist/../icons/night.svg") no-repeat center;
+  background: url("../icons/night.svg") no-repeat center;
   background-size: cover; }
 
 .item__phase {
@@ -324,7 +324,7 @@
     grid-template-rows: 140px auto 350px 550px;
     background: none; }
   .search {
-    background: url("/dist/../img/search.jpg") no-repeat center;
+    background: url("../img/search.jpg") no-repeat center;
     background-size: cover;
     position: relative;
     z-index: 0;
@@ -366,7 +366,7 @@
     color: #F7FFF7; }
   .forecast {
     font-size: 1.7rem;
-    background: url("/dist/../img/bg.jpg") no-repeat center;
+    background: url("../img/bg.jpg") no-repeat center;
     background-size: cover; }
   .day-wrapper {
     width: 100%;
