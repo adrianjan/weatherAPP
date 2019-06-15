@@ -70,7 +70,7 @@ const displayUI = (obj) => {
 };
 
 const getForecast = async (code) => {
-  const base = 'http://dataservice.accuweather.com/forecasts/v1/daily/5day/';
+  const base = 'https://dataservice.accuweather.com/forecasts/v1/daily/5day/';
   const query = `${code}?apikey=${key}`;
 
   const response = await fetch(base + query);
@@ -81,7 +81,7 @@ const getForecast = async (code) => {
 
 //use location code to fetch conditions
 const getWeather = async (code) => {
-  const base = 'http://dataservice.accuweather.com/currentconditions/v1/';
+  const base = 'https://dataservice.accuweather.com/currentconditions/v1/';
   const query = `${code}?apikey=${key}`;
 
   const response = await fetch(base + query);
@@ -91,7 +91,7 @@ const getWeather = async (code) => {
 };
 
 const getCity = async (city) => {
-  const base = 'http://dataservice.accuweather.com/locations/v1/cities/search';
+  const base = 'https://dataservice.accuweather.com/locations/v1/cities/search';
   const query = `?apikey=${key}&q=${city}`;
 
   const response = await fetch(base + query);
